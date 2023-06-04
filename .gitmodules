@@ -1,3 +1,6 @@
 [submodule "boilerplate"]
 	path = boilerplate
 	url = https://github.com/agerard57/clickify-boilerplate
+[submodule "common"]
+	path = common
+	url = https://github.com/agerard57/clickify-common
