@@ -4,3 +4,6 @@
 [submodule "common"]
 	path = common
 	url = https://github.com/agerard57/clickify-common
+[submodule "main"]
+	path = main
+	url = https://github.com/agerard57/clickify-main
