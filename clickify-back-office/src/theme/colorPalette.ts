@@ -1,0 +1,26 @@
+export const colorPalette = {
+  primaryBlack: "#131313",
+  backOfficeColors: {
+    1: "#6A82FF",
+    2: "#FFDC64",
+    3: "#FF8181",
+    4: "#82FB86",
+    5: "#D886FF",
+    6: "#6091FF",
+    7: "#82FBAB",
+    8: "#FFD789",
+    9: "#2DC0FF",
+    10: "#FF6B6B",
+    11: "#3858E6",
+    12: "#EDC8FF",
+  },
+  blue: "#2343D1",
+  grey: "#848484",
+  lightGrey: "#C4C4C4",
+  blueGradient: {
+    from: "#1b39cd",
+    to: "#6a91f5",
+  },
+  red: "#FF6565",
+  white: "#FFFFFF",
+} as const;

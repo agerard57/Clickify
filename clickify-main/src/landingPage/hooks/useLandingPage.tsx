@@ -1,0 +1,66 @@
+import React, { MutableRefObject, useEffect, useRef } from "react";
+
+import { fullpageApi as FullpageApi } from "@fullpage/react-fullpage";
+
+import { AboutSection, ContactSection, PricingSection, ProductSection, WelcomeSection } from "../components";
+import { Sections, SectionSpec } from "../typings";
+
+interface UseLandingPage {
+  sections: SectionSpec[];
+  fullpageApiRef: MutableRefObject<FullpageApi>;
+}
+
+export const useLandingPage = (): UseLandingPage => {
+  const fullpageApiRef = useRef<FullpageApi | null>(null);
+
+  const sections = [
+    {
+      name: Sections.WELCOME,
+      sectionContent: <WelcomeSection />,
+      nextSectionText: true,
+    },
+    {
+      name: Sections.PRODUCT,
+      sectionContent: <ProductSection />,
+      nextSectionText: true,
+    },
+    {
+      name: Sections.PRICING,
+      sectionContent: <PricingSection />,
+      nextSectionText: true,
+    },
+    {
+      name: Sections.ABOUT,
+      sectionContent: <AboutSection />,
+      nextSectionText: true,
+    },
+    {
+      name: Sections.CONTACT,
+      sectionContent: <ContactSection />,
+      nextSectionText: false,
+    },
+  ] satisfies SectionSpec[];
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const { hash } = window.location;
+      fullpageApiRef.current.moveTo(hash);
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (
+      window.location.hash === "" ||
+      !Object.values(Sections).includes(window.location.hash.replace("#", "") as Sections)
+    ) {
+      window.location.hash = `#${Sections.WELCOME}`;
+    }
+  }, []);
+
+  return { sections, fullpageApiRef };
+};

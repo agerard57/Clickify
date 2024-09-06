@@ -1,0 +1,123 @@
+# The file All.graphql was auto-generated from All.ts using
+# core-types-graphql (https://github.com/grantila/core-types-graphql)
+# on behalf of
+# typeconv (https://github.com/grantila/typeconv)
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+type Traffic {
+  day: AWSDateTime!
+  number: String!
+}
+
+type Analytics @model {
+  id: ID!
+  traffic: [Traffic!]!
+}
+
+type BillingAddress {
+  number: String!
+  streetName: String!
+  city: String!
+  state: String!
+  zip: String!
+  country: String!
+}
+
+enum PlanTypes {
+  pending
+  basic
+  clickify
+  premium
+  admin
+  none
+  banned
+}
+
+type PlanHistory {
+  current: Boolean!
+  plan: PlanTypes!
+  since: AWSDateTime!
+  exp: AWSDateTime
+  price: Float
+}
+
+enum MainSupportStatuses {
+  cancelled
+  inProgress
+  resolved
+  unresolved
+  waiting
+}
+
+type Companies @model{
+  id: ID!
+  legalName: String!
+  tradingName: String!
+  email: String!
+  password: String!
+  lastPasswordGen: AWSDateTime!
+  billingAddress: BillingAddress
+  planHistory: [PlanHistory!]
+  stripeId: String
+  registeredOn: AWSDateTime!
+  updatedOn: AWSDateTime!
+  refreshTokens: [String!]
+  recoveryCode: String
+  status: MainSupportStatuses!
+}
+
+enum DemosStatuses {
+  waiting
+  inProgress
+  done
+  cancelled
+}
+
+type Demos @model {
+  id: ID!
+  name: String!
+  companyName: String!
+  email: String!
+  phoneNumber: String!
+  details: String!
+  openedOn: AWSDateTime!
+  updatedOn: AWSDateTime!
+  status: DemosStatuses!
+}
+
+type Documentation @model {
+  id: ID!
+  public: Boolean!
+  title: String!
+  content: String!
+  updatedOn: AWSDateTime!
+}
+
+enum MainSupportTopics {
+  order
+  returnsRefunds
+  technicalIssues
+  payments
+  customerService
+  security
+  feedback
+  other
+}
+
+enum WebsiteStatuses {
+  active
+  maintenance
+  inactive
+}
+
+type Support @model {
+  id: ID!
+  companyName: String!
+  email: String!
+  topic: MainSupportTopics!
+  updatedOn: AWSDateTime!
+  openedOn: AWSDateTime!
+  subject: String!
+  details: String!
+  status: WebsiteStatuses!
+}

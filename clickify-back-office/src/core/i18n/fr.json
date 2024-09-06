@@ -1,0 +1,36 @@
+{
+  "sideBar": {
+    "chips": {
+      "basic": "BASIQUE",
+      "premium": "PREMIUM",
+      "clickify": "CLICKIFY"
+    },
+    "categories": {
+      "clickify": {
+        "title": "CLICKIFY",
+        "items": {
+          "dashboard": { "title": "Tableau de bord" },
+          "accountList": { "title": "Liste des comptes" },
+          "demoRequests": { "title": "Demandes de démo" },
+          "documentationManager": { "title": "Gestionnaire de documentation" },
+          "support": { "title": "Support" }
+        }
+      },
+      "universes": {
+        "title": "UNIVERS",
+        "items": {
+          "dashboard": { "title": "Tableau de bord" },
+          "reporting": { "title": "Rapports" },
+          "orders": { "title": "Commandes" },
+          "products": { "title": "Produits" },
+          "userList": { "title": "Liste des utilisateurs" },
+          "employees": { "title": "Employés" },
+          "stores": { "title": "Magasins" },
+          "websiteManager": { "title": "Gestionnaire de site web" },
+          "support": { "title": "Support" }
+        }
+      },
+      "documentation": { "title": "DOCUMENTATION" }
+    }
+  }
+}

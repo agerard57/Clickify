@@ -1,0 +1,96 @@
+stages:
+  - lint
+  - test
+  - build
+  - deploy
+
+variables:
+  NPM_CACHE_KEY: "$CI_COMMIT_REF_NAME"
+
+lint:
+  stage: lint
+  image: node:16
+  script:
+    - npm install
+    - npm run lint
+  cache:
+    key: "$NPM_CACHE_KEY"
+    paths:
+      - node_modules/
+  rules:
+    - exists:
+        - "*.js"
+        - "*.css"
+
+test:
+  stage: test
+  image: node:16
+  script:
+    - npm install
+    - npm run test:jest
+  cache:
+    key: "$NPM_CACHE_KEY"
+    paths:
+      - node_modules/
+  rules:
+    - exists:
+        - "*.js"
+
+build:
+  stage: build
+  image: node:16
+  script:
+    - npm install
+    - npm run build
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "master"'
+  artifacts:
+    paths:
+      - dist/
+
+zip:
+  stage: deploy
+  image:
+    name: ubuntu:latest
+  script:
+    - apt-get update
+    - apt-get install -y zip
+    - zip -r build.zip dist/
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "master"'
+  artifacts:
+    paths:
+      - build.zip
+
+.assume_role: &assume_role
+  - >
+    STS=($(aws sts assume-role-with-web-identity
+    --role-arn arn:aws:iam::890731805613:role/CLICKIFY-MAIN-PROD-ROLE
+    --role-session-name "GitLabRunner-${CI_PROJECT_ID}-${CI_PIPELINE_ID}"
+    --web-identity-token $ID_TOKEN
+    --duration-seconds 3600
+    --query 'Credentials.[AccessKeyId,SecretAccessKey,SessionToken]'
+    --output text))
+  - export AWS_ACCESS_KEY_ID="${STS[0]}"
+  - export AWS_SECRET_ACCESS_KEY="${STS[1]}"
+  - export AWS_SESSION_TOKEN="${STS[2]}"
+  - aws configure set region eu-west-1
+
+.deploy_template: &deploy
+  script:
+    - *assume_role
+    - aws s3 cp build.zip s3://$S3_BUCKET/
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "master"'
+
+deploy_s3:
+  stage: deploy
+  needs: [zip]
+  image:
+    name: amazon/aws-cli:latest
+    entrypoint:
+      - "/usr/bin/env"
+  id_tokens:
+    ID_TOKEN:
+      aud: clickify-main-prod
+  <<: *deploy

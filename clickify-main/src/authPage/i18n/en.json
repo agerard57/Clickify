@@ -1,0 +1,47 @@
+{
+  "signUp": {
+    "title": "Sign Up",
+    "imageText": "Start the Clickify adventure now!",
+    "buttonText": "Sign Up"
+  },
+  "login": {
+    "title": "Login",
+    "imageText": "Resume where you last left!",
+    "buttonText": "Login"
+  },
+  "confirm": {
+    "buttonText": "Confirm"
+  },
+  "inputs": {
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter company email"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter company password"
+    },
+    "repeatPassword": {
+      "label": "Repeat password",
+      "placeholder": "Repeat your password"
+    },
+    "confirmationCode": {
+      "placeholder": "000000",
+      "label": "Confirmation code"
+    },
+    "rememberMe": "Remember Me",
+    "forgotPassword": "Forgot Password?"
+  },
+  "errors": {
+    "passwordLength": "Be at least 8 characters long",
+    "passwordLowercase": "Contain at least one lowercase letter",
+    "passwordUppercase": "Contain at least one uppercase letter",
+    "passwordNumber": "Contain at least one number",
+    "passwordSpecialCharacter": "Contain at least one special character",
+    "passwordMatch": "Passwords do not match"
+  },
+  "auth": {
+    "success": "You have successfully authenticated",
+    "confirmation": "You have registered successfully. Please confirm your email address"
+  }
+}

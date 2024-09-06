@@ -1,0 +1,49 @@
+{
+  "TODO": "remove this file when done + use domainName + setUp images + fond where to use smallLogoPath",
+  "lang": "en",
+  "domainName": "example.com",
+  "fullLogoPath": "/images/logo-full.png",
+  "smallLogoPath": "/images/logo-small.png",
+  "landingPage": {
+    "text": "Welcome to our website",
+    "imagePath": "/images/landing.jpg",
+    "layout": "centered"
+  },
+  "support": {
+    "status": "online",
+    "email": {
+      "confirmed": true,
+      "emailAddress": "support@example.com"
+    },
+    "phoneNumber": {
+      "display": true,
+      "number": "+1234567890"
+    },
+    "photoPath": "/images/support.jpg"
+  },
+  "aboutUs": {
+    "text": "We are committed to providing the best service.",
+    "phoneNumber": {
+      "display": true,
+      "number": "+1234567890"
+    },
+    "emailAddress": {
+      "confirmed": true,
+      "emailAddress": "info@example.com"
+    },
+    "termsAndConditions": {
+      "filePath": "/docs/terms.pdf",
+      "lastModified": "2024-07-30T14:48:00.000Z"
+    },
+    "photoPath": "/images/about.jpg"
+  },
+  "createdOn": "2024-01-01T00:00:00.000Z",
+  "updatedOn": "2024-07-30T14:48:00.000Z",
+  "colors": {
+    "primary": "#FF5733",
+    "textColor": "#333333"
+  },
+
+  "status": "active",
+  "maintenanceMessage": "We are currently undergoing maintenance. Please check back later."
+}

@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "clickifymain",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}

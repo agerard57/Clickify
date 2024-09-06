@@ -1,0 +1,47 @@
+{
+  "signUp": {
+    "title": "S'inscrire",
+    "imageText": "Commencer dès maintenant l'aventure Clickify !",
+    "buttonText": "S'inscrire"
+  },
+  "login": {
+    "title": "Se connecter",
+    "imageText": "Reprendre là où vous vous êtes arrêté !",
+    "buttonText": "Se connecter"
+  },
+  "inputs": {
+    "email": {
+      "label": "Email",
+      "placeholder": "Entrez l'email de l'entreprise"
+    },
+    "password": {
+      "label": "Mot de passe",
+      "placeholder": "Entrez le mot de passe de l'entreprise"
+    },
+    "repeatPassword": {
+      "label": "Répéter le mot de passe",
+      "placeholder": "Entrez à nouveau le mot de passe de l'entreprise"
+    },
+    "confirmationCode": {
+      "placeholder": "000000",
+      "label": "Code de confirmation"
+    },
+    "rememberMe": "Se souvenir de moi",
+    "forgotPassword": "Mot de passe oublié?"
+  },
+  "confirm": {
+    "buttonText": "Confirmer"
+  },
+  "errors": {
+    "passwordLength": "Faites au moins 8 caractères de long",
+    "passwordLowercase": "Contenir au moins une lettre minuscule",
+    "passwordUppercase": "Contenir au moins une lettre majuscule",
+    "passwordNumber": "Contenir au moins un chiffre",
+    "passwordSpecialCharacter": "Contenir au moins un caractère spécial",
+    "passwordMatch": "Les mots de passe ne correspondent pas"
+  },
+  "auth": {
+    "success": "Vous vous êtes authentifié avec succès",
+    "confirmation": "Vous vous êtes inscrit avec succès. Veuillez confirmer votre adresse e-mail"
+  }
+}

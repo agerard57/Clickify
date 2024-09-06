@@ -1,0 +1,105 @@
+{
+  "api": {
+    "clickifymain": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDate": "2024-05-14T19:08:23.518Z",
+              "apiKeyExpirationDays": 7,
+              "description": ""
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "auth": {
+    "clickifymain": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS",
+            "REQUIRES_UPPERCASE"
+          ],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_storage_clickifymaincompanies_arn": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "clickifymaincompanies"
+        }
+      ]
+    },
+    "AMPLIFY_storage_clickifymaincompanies_partitionKeyName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "clickifymaincompanies"
+        }
+      ]
+    },
+    "AMPLIFY_storage_clickifymaincompanies_partitionKeyType": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "clickifymaincompanies"
+        }
+      ]
+    },
+    "AMPLIFY_storage_clickifymaincompanies_region": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "clickifymaincompanies"
+        }
+      ]
+    },
+    "AMPLIFY_storage_clickifymaincompanies_tableName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "clickifymaincompanies"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "clickifymaincompanies": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB",
+      "serviceType": "imported"
+    }
+  }
+}

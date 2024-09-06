@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing page - Welcome section should render welcome section properly 1`] = `
+[
+  <span
+    className="MuiTypography-root MuiTypography-title css-1svodp3-MuiTypography-root"
+  >
+    welcome.title
+  </span>,
+  <img
+    src=""
+    style={
+      {
+        "height": 400,
+        "marginTop": 50,
+      }
+    }
+  />,
+]
+`;

@@ -1,0 +1,36 @@
+{
+  "sideBar": {
+    "chips": {
+      "basic": "BASIC",
+      "premium": "PREMIUM",
+      "clickify": "CLICKIFY"
+    },
+    "categories": {
+      "clickify": {
+        "title": "CLICKIFY",
+        "items": {
+          "dashboard": { "title": "Dashboard" },
+          "accountList": { "title": "Account list" },
+          "demoRequests": { "title": "Demo requests" },
+          "documentationManager": { "title": "Documentation manager" },
+          "support": { "title": "Support" }
+        }
+      },
+      "universes": {
+        "title": "UNIVERSES",
+        "items": {
+          "dashboard": { "title": "Dashboard" },
+          "reporting": { "title": "Reporting" },
+          "orders": { "title": "Orders" },
+          "products": { "title": "Products" },
+          "userList": { "title": "User list" },
+          "employees": { "title": "Employees" },
+          "stores": { "title": "Stores" },
+          "websiteManager": { "title": "Website manager" },
+          "support": { "title": "Support" }
+        }
+      },
+      "documentation": { "title": "DOCUMENTATION" }
+    }
+  }
+}

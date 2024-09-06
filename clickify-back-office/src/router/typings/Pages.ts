@@ -1,0 +1,17 @@
+export enum Pages {
+  ERROR_PAGE = "errorPage",
+  LANDING_PAGE = "landingPage",
+  DASHBOARD_PAGE = "dashboard",
+  UNIVERSE_DASHBOARD_PAGE = "universeDashboardPage",
+  UNIVERSE_REPORTING_PAGE = "universeReportPage",
+  TABLE_PAGE = "tablePage",
+  DOCUMENTATION_MANAGER = "documentManager",
+  DEMO_REQUESTS_TABLE = "demoRequestsTable",
+  ACCOUNT_TABLE = "accountTable",
+  CLICKIFY_SUPPORT = "clickifySupport",
+  UNIVERSE_ORDERS_TABLE = "universeOrdersTable",
+  UNIVERSE_USERS_TABLE = "universeUsersTable",
+  UNIVERSE_EMPLOYEES_TABLE = "universeEmployeesTable",
+  UNIVERSE_STORES_TABLE = "universeStoresTable",
+  UNIVERSE_SUPPORT_TABLE = "universeSupportTable",
+}
